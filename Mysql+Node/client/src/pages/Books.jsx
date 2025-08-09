@@ -33,7 +33,7 @@ const Books = () => {
       <div className="books">
         {books.map((book)=>(
             <div className="book" key={book.id}>
-                {book.cover && <img src={book.cover} alt="" />}
+                {/* {book.cover && <img src={book.cover} alt="" />} */}
                 <h2>{book.title}</h2>
                 <p>{book.desc}</p>
                 <span>{book.price}</span>
@@ -42,9 +42,11 @@ const Books = () => {
             </div>
         ))}
       </div>
+      <div className='add-button-container'>
       <button>
         <Link to="/add">Add New Book</Link>
       </button>
+      </div>
     </div>
   )
 }

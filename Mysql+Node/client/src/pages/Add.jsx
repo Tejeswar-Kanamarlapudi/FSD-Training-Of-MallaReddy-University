@@ -6,8 +6,7 @@ const Add = () => {
     const [book,setBook]=useState({
         title:"",
         desc:"",
-        price:null,
-        cover:""
+        price:null
     })
     const navigate = useNavigate()
     const handleChange = (e) =>{
@@ -29,7 +28,7 @@ const Add = () => {
         <input type="text" placeholder='title' onChange={handleChange} name='title'/>
         <input type="text" placeholder='desc' onChange={handleChange} name='desc'/>
         <input type="number" placeholder='price' onChange={handleChange} name='price'/>
-        <input type="text" placeholder='cover' onChange={handleChange} name='cover'/>
+        {/* <input type="text" placeholder='cover' onChange={handleChange} name='cover'/> */}
         <button onClick={handleClick}>Add</button>
     </div>
   )
