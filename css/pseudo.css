@@ -1,0 +1,50 @@
+body{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+a:link{
+    color: darkslategrey;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.link1:hover{
+    color: green;
+}
+
+.link2:visited{
+    color:red;
+}
+
+input:focus{
+    background-color: green;
+}
+
+.list-items{
+    list-style: none;
+}
+
+.list-items li{
+    background-color: blue;
+    color: white;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+.list-items li:first-child{
+    background-color: red;
+}
+
+.list-items li:nth-child(even){
+    background-color: yellow;
+    font-size: 16px;
+}
+
+.list-items li:not(:nth-child(even)){
+    background-color: green;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Event</title>
+</head>
+<body>
+    <button id="btn">Click Here</button>
+</body>
+<script>
+    let btn = document.getElementById('btn');
+
+    function btn_click(){
+        document.body.style.backgroundColor = 'blue';
+    }
+    btn.addEventListener('click',btn_click);
+    // btn.addEventListener('click',()=>{
+    //     // btn.style.backgroundColor ='blue';
+    //     document.body.style.backgroundColor = 'blue';
+    // })
+</script>
+</html>

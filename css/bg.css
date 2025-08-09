@@ -1,0 +1,11 @@
+*{
+    background-image: url('https://web.dev/static/css/image/hero-css.png');
+    background-size: 130px;
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
+body{
+    min-height: 250px;
+}

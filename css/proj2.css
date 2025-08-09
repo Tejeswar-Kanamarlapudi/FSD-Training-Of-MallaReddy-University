@@ -1,0 +1,90 @@
+body{
+    text-align: center;
+}
+
+h1{
+    position: sticky;
+    top: 0;
+    color: blue;
+    font-size: 36px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: monospace;
+    background-color: white;
+}
+
+#display{
+    width: 80%;
+    margin: 1.5rem auto;
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+    border: 5px dotted black;
+}
+
+#display .inline{
+    background-color: orange;
+    margin: 10px;
+}
+
+#display .block{
+    background-color: green;
+    margin: 5px;
+}
+
+#display .inline-block{
+    display: inline-block;
+    background-color: orange;
+    width: 100px;
+    height: 35px;
+    margin: 5px;
+}
+
+#position{
+    width: 80%;
+    margin: 1.5rem auto;
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+    border: 5px dashed black;
+}
+
+#position .box{
+    position: relative;
+    height: 110px;
+    width: 80%;
+    margin: 10px auto;
+    padding: 5px;
+    border: 1px solid white;
+}
+
+#position .box .para1{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#position .box .para2{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#position .contact{
+    color: black;
+    background-color: green;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+#info{
+    width: 80%;
+    height: 500px;
+    margin: 1.5rem auto;
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+    border: 5px dashed black;
+    overflow: scroll;
+}

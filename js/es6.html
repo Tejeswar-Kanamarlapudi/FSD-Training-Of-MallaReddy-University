@@ -1,0 +1,43 @@
+<script>
+    // default parameters
+    function greet(name,wish){
+        console.log(`${wish} - ${name}`);
+    }
+    greet('kesav','happy birthday');
+    greet('madhav','happy birthday');
+    greet('ravindhar','happy birthday');
+
+    function greet1(name,wish='happy birthday'){
+        console.log(`${wish} - ${name}`);
+    }
+    greet1('kesav');
+    greet1('madhav');
+    greet1('ravindhar','happy new year');
+
+    console.log('-----------------------------------');
+    // rest parameter
+
+    function sumNum(...numbers){
+        let sum = 0;
+        for(let num of numbers){
+            sum = sum+num;
+        }
+        console.log("Sum of numbers: ",sum);
+    }
+
+    sumNum(1,2,3);
+    sumNum(1,2,3,4,5,6);
+    sumNum(1);    
+
+    // optional chaining
+    const user = {
+        name : "Kesava",
+        address : {
+            city: "Vijayawada",
+            pin: "520015"
+        }
+    };
+
+    console.log(user.address?.city);
+    console.log(user.location?.state);
+</script>

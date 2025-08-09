@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Bar Graph</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background: #f9f9f9;
+}
+
+.chart {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.bar {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem;
+  width: var(--value);
+  transition: width 0.3s ease-in-out;
+  border-radius: 5px;
+}
+  </style>
+</head>
+<body>
+  <div class="chart">
+    <div class="bar" style="--value: 80%">HTML (80%)</div>
+    <div class="bar" style="--value: 60%">CSS (60%)</div>
+    <div class="bar" style="--value: 90%">JavaScript (90%)</div>
+    <div class="bar" style="--value: 50%">React (50%)</div>
+  </div>
+</body>
+</html>

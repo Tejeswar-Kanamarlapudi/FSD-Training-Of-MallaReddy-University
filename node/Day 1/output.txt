@@ -1,0 +1,2 @@
+This is file created by Node
+ FS Module Completed

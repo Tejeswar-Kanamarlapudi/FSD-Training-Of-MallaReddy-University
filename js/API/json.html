@@ -1,0 +1,23 @@
+<script>
+    // syntax of JSON
+    // {
+    //   "name" : "Tejeswar",
+    //   "age"  : 26,
+    //   "skills" : ["Javascript","Html","CSS"]
+    // }
+    // keys and values must be in double quotes(" ").
+    // functions and comments are not allowed
+
+    // json to js and js to json
+
+    // 1. Parsing ( json to js )
+    const jsonString = '{ "name":"tej", "skill":"html" }';
+    const jsObject = JSON.parse(jsonString);
+    console.log(jsObject.name);
+    console.log(jsObject.skill);
+
+    // 2. Stringify ( js to json )
+    const obj = { name:"tej" , stack:"mern" }
+    const json = JSON.stringify(obj);
+    console.log(json);
+</script>

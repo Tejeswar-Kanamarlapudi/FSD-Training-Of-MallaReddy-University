@@ -1,0 +1,20 @@
+h1{
+    display: inline;
+    background-color: blue;
+}
+h2{
+    display: block;
+    background-color: blue;
+}
+.p1,.p2{
+    display: inline-block;
+    background-color: orange;
+    width: 100px;
+    height: 200px;
+}
+.p3{
+    display: inline;
+    background-color: orange;
+    width: 100px;
+    height: 200px;
+}

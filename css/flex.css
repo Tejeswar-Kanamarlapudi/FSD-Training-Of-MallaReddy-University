@@ -1,0 +1,42 @@
+body{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-content: center;
+    /* flex-wrap: wrap; */
+    /* row-gap: 10px;
+    column-gap: 10px; */
+    gap: 10px;
+    /* align-items: center; */
+    border: 2px solid black;
+    height: 900px;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    /* flex-grow: 1;
+    flex-shrink: 1; */
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    color: white;
+    border: 1px solid white;
+}
+
+/* .box9{
+    order: -1;
+    align-self: center;
+}
+
+.box3{
+    order: 2;
+    align-self: flex-end;
+} */
+
+/* .box3{
+    flex-grow: 3;
+    flex-shrink: 0;
+} */

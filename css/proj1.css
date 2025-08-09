@@ -1,0 +1,39 @@
+*{
+    background-color: lightblue;
+    text-align: center;
+}
+
+hr{
+    background-color: red;
+    height: 6px;
+}
+
+#html{
+    height: 50px;
+    background-image: url('./html.png');
+    background-size: 50px;
+    background-repeat: repeat-x;
+}
+
+.para1{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-style: italic;
+    background-color: green;
+    color: white;
+}
+
+#css{
+    height: 50px;
+    background-image: url('https://sharpminds.com/wp-content/uploads/2023/08/CSS-726x1024.png');
+    background-size: 40px;
+    background-repeat: repeat-x;
+}
+
+.para2{
+    font-size: 22px;
+    text-transform: lowercase;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}

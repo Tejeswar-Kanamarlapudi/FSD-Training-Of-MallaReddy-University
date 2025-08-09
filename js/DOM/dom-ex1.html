@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 65%;
+            height: 300px;
+            border: 2px solid blue;
+        }
+
+        .box-1{
+            box-shadow: 15px 10px 15px blue;
+        }
+
+        .box-2{
+            box-shadow: 15px 10px 15px red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="box">
+        <p id="username">Username: </p>
+        <p id="password">Password: </p>
+        <p id="output"></p>
+    </div>
+</body>
+<script>
+    let username = prompt('Enter Username');
+    let password = prompt('Enter password');
+
+    let div_box = document.getElementById('box');
+    let user_element = document.getElementById('username');
+    let pswd_element = document.getElementById('password');
+    let output = document.getElementById('output');
+
+
+    user_element.innerHTML = username;
+    pswd_element.innerHTML = password;
+
+    if (username==='teja' && password==='1234') {
+        div_box.classList.add('box-1');
+        output.innerHTML = '<u>Login Successfull</u>';
+    } else{
+        output.innerHTML = '<u>Login Unsuccessfull</u>';
+        div_box.classList.add('box-2');
+    }
+
+</script>
+</html>

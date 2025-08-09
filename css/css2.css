@@ -1,0 +1,18 @@
+h2{
+    font-family: 'Times New Roman', sans-serif;
+    color: blue;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+p{
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 30px;
+    word-spacing: 10px;
+}
+
+#para{
+    text-align: center;
+}

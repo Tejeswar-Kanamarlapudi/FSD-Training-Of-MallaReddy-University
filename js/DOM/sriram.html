@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Form</title>
+</head>
+<body>
+  <h2>Feedback Form</h2>
+  <form id="feedbackForm">
+    <label for="experience">How was your experience?</label>
+    <select id="experience">
+      <option value="">--Choose--</option>
+      <option value="good">Good</option>
+      <option value="bad">Bad</option>
+    </select>
+
+    <div id="extraQuestion"></div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="submittedFeedback"></div>
+
+  <script>
+    const experience = document.getElementById('experience');
+    const extraQuestion = document.getElementById('extraQuestion');
+    const form = document.getElementById('feedbackForm');
+    const submittedFeedback = document.getElementById('submittedFeedback');
+
+    experience.addEventListener('change', () => {
+      extraQuestion.innerHTML = ''; // clear previous
+
+      if (experience.value === 'bad') {
+        const label = document.createElement('label');
+        label.innerText = 'Please tell us what went wrong:';
+
+        const input = document.createElement('textarea');
+        input.name = 'details';
+
+        extraQuestion.appendChild(label);
+        extraQuestion.appendChild(document.createElement('br'));
+        extraQuestion.appendChild(input);
+      }
+    });
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // prevent page reload
+      const feedback = experience.value;
+      const details = form.elements['details']?.value || '';
+
+      submittedFeedback.innerHTML = `<h3>Thank you!</h3>
+        <p>Experience: ${feedback}</p>
+        ${details ? `<p>Details: ${details}</p>` : ''}`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="keywords" content="portfolio, web development, HTML5, meta tags, basic html">
+    <meta name="description" content="A mini static portfolio site showcasing fundamental HTML5 features and meta tags, with no CSS or JavaScript."> <!-- Provides a brief description of the page content -->
+    <meta name="author" content="Your Name"> 
+    <meta http-equiv="refresh" content="300"> 
+    <meta name="robots" content="index, follow"> 
+
+    <title>Mini Portfolio (HTML Only)</title>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hello! I'm a passionate web developer eager to learn and create engaging digital experiences. This mini portfolio showcases some fundamental HTML5 features. I enjoy building things from scratch and continuously expanding my skill set.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div>
+                <h3>HTML5</h3>
+                <p>Semantic elements & new features</p>
+            </div>
+            <div>
+                <h3>CSS3</h3>
+                <p>Styling & responsive design</p>
+            </div>
+            <div>
+                <h3>JavaScript</h3>
+                <p>Interactivity & DOM manipulation</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>My Projects</h2>
+
+            <!-- Project 1: Canvas Example -->
+            <div>
+                <h3>Project 1: Canvas Drawing</h3>
+                <p>This example uses the HTML5 &lt;canvas&gt; element. Without JavaScript, it will appear as an empty box.</p>
+                <canvas id="myCanvas" width="400" height="200" style="border:1px solid #000000;"></canvas>
+            </div>
+
+            <!-- Project 2: Video Example -->
+            <div>
+                <h3>Project 2: Video Showcase</h3>
+                <p>This demonstrates the HTML5 &lt;video&gt; element.</p>
+                <video controls width="320" height="240">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Project 3: Audio Example -->
+            <div>
+                <h3>Project 3: Audio Clip</h3>
+                <p>This uses the HTML5 &lt;audio&gt; element.</p>
+                <audio controls>
+                    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                    <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form action="#" method="POST">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+                </div>
+                <div>
+                    <label for="appointment_date">Preferred Appointment Date:</label>
+                    <input type="date" id="appointment_date" name="appointment_date">
+                </div>
+                <div>
+                    <label for="skill_level">Your Skill Level (1-10):</label>
+                    <input type="range" id="skill_level" name="skill_level" min="1" max="10" value="5">
+                </div>
+                <div>
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

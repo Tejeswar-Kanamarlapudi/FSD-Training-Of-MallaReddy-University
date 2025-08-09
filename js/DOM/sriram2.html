@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Feedback Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    .star {
+      font-size: 24px;
+      cursor: pointer;
+      color: lightgray;
+    }
+    .star.selected {
+      color: gold;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Feedback Form</h1>
+  <form id="feedbackForm">
+    <label>Name: <input type="text" id="name" required></label><br><br>
+    <label>Email: <input type="email" id="email" required></label><br><br>
+
+    <label>Rate your experience:</label><br>
+    <div id="ratingStars">
+      <span class="star" data-value="1">&#9733;</span>
+      <span class="star" data-value="2">&#9733;</span>
+      <span class="star" data-value="3">&#9733;</span>
+      <span class="star" data-value="4">&#9733;</span>
+      <span class="star" data-value="5">&#9733;</span>
+    </div>
+    <input type="hidden" id="rating" name="rating">
+    <br>
+
+    <div id="followUp"></div>
+
+    <label for="comments">Comments (max 200 characters):</label><br>
+    <textarea id="comments" rows="4" cols="50" maxlength="200"></textarea>
+    <div><span id="charCount">0</span>/200</div><br>
+
+    <button type="button" id="addQuestionBtn">Add Custom Question</button>
+    <div id="customQuestions"></div><br>
+
+    <button type="submit">Submit Feedback</button>
+    <div id="errorMsg" class="error"></div>
+  </form>
+
+  <hr>
+
+  <h2>Submitted Feedback:</h2>
+  <div id="submittedFeedback"></div>
+
+  <script>
+    const stars = document.querySelectorAll('.star');
+    const ratingInput = document.getElementById('rating');
+    const followUp = document.getElementById('followUp');
+    const comments = document.getElementById('comments');
+    const charCount = document.getElementById('charCount');
+    const addQuestionBtn = document.getElementById('addQuestionBtn');
+    const customQuestions = document.getElementById('customQuestions');
+    const form = document.getElementById('feedbackForm');
+    const submittedFeedback = document.getElementById('submittedFeedback');
+    const errorMsg = document.getElementById('errorMsg');
+
+    // Star rating system
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        const rating = star.dataset.value;
+        ratingInput.value = rating;
+        updateStars(rating);
+        updateFollowUp(rating);
+      });
+    });
+
+    function updateStars(rating) {
+      stars.forEach(star => {
+        star.classList.toggle('selected', star.dataset.value <= rating);
+      });
+    }
+
+    function updateFollowUp(rating) {
+      followUp.innerHTML = '';
+      if (rating <= 2) {
+        const label = document.createElement('label');
+        label.innerText = 'Sorry! What went wrong?';
+        const input = document.createElement('textarea');
+        input.name = 'problemDetails';
+        input.rows = 3;
+        followUp.appendChild(label);
+        followUp.appendChild(document.createElement('br'));
+        followUp.appendChild(input);
+      }
+    }
+
+    // Live character count
+    comments.addEventListener('input', () => {
+      charCount.textContent = comments.value.length;
+    });
+
+    // Add custom question
+    addQuestionBtn.addEventListener('click', () => {
+      const qLabel = prompt("Enter your custom question:");
+      if (qLabel) {
+        const div = document.createElement('div');
+        const label = document.createElement('label');
+        label.innerText = qLabel;
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = `custom_${qLabel.replace(/\s+/g, '_').toLowerCase()}`;
+        div.appendChild(label);
+        div.appendChild(document.createElement('br'));
+        div.appendChild(input);
+        customQuestions.appendChild(div);
+      }
+    });
+
+    // Handle form submission
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      errorMsg.textContent = '';
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const rating = ratingInput.value;
+
+      if (!name || !email || !rating) {
+        errorMsg.textContent = 'Please fill out name, email, and select a rating.';
+        return;
+      }
+
+      const feedback = {
+        name,
+        email,
+        rating,
+        comments: comments.value,
+        problemDetails: form.elements['problemDetails']?.value || '',
+        custom: {}
+      };
+
+      const customInputs = customQuestions.querySelectorAll('input');
+      customInputs.forEach(input => {
+        feedback.custom[input.name] = input.value;
+      });
+
+      // Display feedback
+      let result = `<p><strong>Name:</strong> ${feedback.name}</p>
+        <p><strong>Email:</strong> ${feedback.email}</p>
+        <p><strong>Rating:</strong> ${feedback.rating}</p>
+        <p><strong>Comments:</strong> ${feedback.comments}</p>`;
+
+      if (feedback.problemDetails) {
+        result += `<p><strong>Problem:</strong> ${feedback.problemDetails}</p>`;
+      }
+
+      if (Object.keys(feedback.custom).length > 0) {
+        result += `<p><strong>Custom Answers:</strong></p><ul>`;
+        for (let key in feedback.custom) {
+          result += `<li>${key.replace('custom_', '').replace(/_/g, ' ')}: ${feedback.custom[key]}</li>`;
+        }
+        result += `</ul>`;
+      }
+
+      submittedFeedback.innerHTML = result;
+      form.reset();
+      updateStars(0);
+      charCount.textContent = '0';
+      followUp.innerHTML = '';
+      customQuestions.innerHTML = '';
+    });
+  </script>
+
+</body>
+</html>

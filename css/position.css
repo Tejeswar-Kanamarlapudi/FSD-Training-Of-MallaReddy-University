@@ -1,0 +1,29 @@
+.parent-box{
+    position: relative;
+    margin: 15px;
+    padding: 25px;
+    height: 1200px;
+    background-color: blue;
+}
+
+.box{
+    border: 2px solid black;
+    height: 26px;
+    background-color: orange;
+}
+
+.child-box-1{
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* z-index: 0; */
+}
+
+.child-box-3{
+    position: sticky;
+    top: 5px;
+}
+/* .child-box-2{
+    position: relative;
+    z-index: 1;
+} */
